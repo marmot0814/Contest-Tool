@@ -4,9 +4,9 @@ version: "3.5"
 
 services:
   pdfMaker:
-    build:
-      context: .
-      dockerfile: submodules/latex/Dockerfile
+#    build:
+#      context: .
+#      dockerfile: submodules/latex/Dockerfile
     image: marmot0814/latex
     container_name: pdfMaker
     command: ["sleep","infinity"]
