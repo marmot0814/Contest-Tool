@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build the stack
-        run: make build
-      - name: Generate pdf
-        run: make pdf
+      - name: Build stack and generate pdf
+        run: make build && make pdf
       - name: Generate release tag
         id: tag
         run: echo "release_tag=$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
