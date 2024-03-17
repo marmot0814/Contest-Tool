@@ -7,5 +7,8 @@ build:
 pdf:
 	bash script/makePdf.sh
 
+compress:
+	bash script/folderCompressor.sh
+
 clean:
-	rm -rf problem.pdf
+	rm -rf problem.pdf *.zip
