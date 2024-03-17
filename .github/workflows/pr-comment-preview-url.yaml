@@ -1,5 +1,9 @@
 name: Comment preview URL on PR
 
+permissions:
+  pull-requests: write
+  contents: write
+
 on:
   workflow_run:
     types:
