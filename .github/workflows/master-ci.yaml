@@ -19,7 +19,9 @@ jobs:
       - name: Generate release tag
         id: tag
         run: echo "release_tag=$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
-      - name: Release pdf
+      - name: Compress domjudge format zip file
+        run: make compress
+      - name: Release contest data
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ github.token }}
@@ -28,3 +30,4 @@ jobs:
           target_commitish: ${{ github.sha }}
           files: |
             problem.pdf
+            *.zip

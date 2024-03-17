@@ -124,15 +124,15 @@
 		\end{tabular}
 	\end{center}
 
-	\field{#1}{Problem Description}{statement.tex}
+	\field{#1}{Problem Description}{tex/statement.tex}
 
-	\field{#1}{Input Format}{input.tex}
-	\field{#1}{Output Format}{output.tex}
-	\field[0]{#1}{Technical Specification}{spec.tex}
+	\field{#1}{Input Format}{tex/input.tex}
+	\field{#1}{Output Format}{tex/output.tex}
+	\field[0]{#1}{Technical Specification}{tex/spec.tex}
 	\vspace{3mm}
 	\testdata{#1}
-	\field[0]{#1}{Hint}{hint.tex}
-	\field[0]{#1}{Note}{note.tex}
+	\field[0]{#1}{Hint}{tex/hint.tex}
+	\field[0]{#1}{Note}{tex/note.tex}
 	\newpage
 }
 
@@ -158,7 +158,10 @@
             ID & Problem Name & Time Limit \\
         \midrule
             % \problemList{folder_name}{problem_name}{time_limit}{memory_limit}
-            \problemList{sample}{Hello World}{1}{2048}
+            \problemList{A}{Hello World A}{1}{2048}
+            \problemList{B}{Hello World B}{1}{2048}
+            \problemList{C}{Hello World C}{1}{2048}
+            \problemList{D}{Hello World D}{1}{2048}
         \bottomrule
     \end{tabular}
 \end{center}
@@ -172,6 +175,9 @@
 \belowdisplayskip=2pt
 
 % \problem{folder_name}{problem_name}{time_limit}{memory_limit}
-\problem{sample}{Hello World}{1}{2048}
+\problem{A}{Hello World A}{1}{2048}
+\problem{B}{Hello World B}{1}{2048}
+\problem{C}{Hello World C}{1}{2048}
+\problem{D}{Hello World D}{1}{2048}
 
 \end{document}

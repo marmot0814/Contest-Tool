@@ -10,7 +10,7 @@ for folder in args.folder:
     if os.path.isdir("./%s"%(folder)):
         print("%s already exists"%(folder))
         continue
-    shutil.copytree("./sample", "./%s"%(folder))
+    shutil.copytree("./template/problem_sample", "./%s"%(folder))
     os.mkdir("./%s/data"%(folder))
     os.mkdir("./%s/data/sample"%(folder))
     open("./%s/data/sample/1.in"%(folder), "w")

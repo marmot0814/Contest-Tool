@@ -11,15 +11,19 @@ cd Contest-Tool
 make build
 ```
 
-## Example
+## Add a problem
 ```
-cp template/problem.tex.contest problem.tex
+python script/folderGenerator.py {PROBLEM_NAME}
+```
+
+## Generate pdf
+```
 make pdf
 ```
 
-## Add a problem
+## Compress DOMjudge format zip file
 ```
-python script/folderGenerator.py test
+make compress
 ```
 
 ## Acknowledge
