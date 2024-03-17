@@ -13,11 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: isbang/compose-action@v1.5.1
-        with:
-          compose-file: ./docker-compose.yaml
-          test-container: pdfMaker
-          test-command: make pdf
+      - name: Build the stack
+        run: make build
+      - name: Generate pdf
+        run: make pdf
       - name: Generate release tag
         id: tag
         run: echo "release_tag=$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
