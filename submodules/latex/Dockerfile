@@ -64,7 +64,30 @@ RUN mkdir /tmp/noto && \
 RUN tlmgr update --self && \
     tlmgr install texliveonfly \
                   latexmk \
-                  xetex
+                  xetex \
+                  tcolorbox \
+                  pgf \
+                  environ \
+                  etoolbox \
+                  cmap \
+                  enumitem \
+                  titling \
+                  booktabs \
+                  musicography \
+                  stackengine \
+                  setspace \
+                  soul \
+                  titlesec \
+                  caption \
+                  wrapfig \
+                  adjustbox \
+                  textpos \
+                  tikz-qtree \
+                  fontspec \
+                  listings \
+                  paracol \
+                  changepage \
+                  parskip
 
 VOLUME ["/storage"]
 WORKDIR /storage
