@@ -81,7 +81,6 @@ jobs:
             ![badge]
 
             Build Successful! You can find a link to the downloadable artifact below.
-            Expire date: `${{}}`
             | Name     | Link                            |
             | -------- | ------------------------------- |
             | Commit   | ${{ env.HEAD_SHA }}             |
