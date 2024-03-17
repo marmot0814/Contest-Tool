@@ -7,9 +7,7 @@ services:
     build:
       context: .
       dockerfile: submodules/latex/Dockerfile
-    image:
-      amd64: marmot0814/latex
-      default: null
+    image: marmot0814/latex
     container_name: pdfMaker
     command: ["sleep","infinity"]
     restart: on-failure
