@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Get Artifact and Pull request info
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
           WORKFLOW_RUN_EVENT_OBJ: ${{ toJSON(github.event.workflow_run) }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}

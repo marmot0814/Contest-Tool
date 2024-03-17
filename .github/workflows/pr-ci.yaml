@@ -13,13 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build the stack
+      - name: Build the environment
         run: make build
       - name: Generate pdf
         run: make pdf
-      - name: Generate release tag
-        id: tag
-        run: echo "release_tag=$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
       - name: Upload Artifact
         id: upload
         uses: actions/upload-artifact@v3.1.2
