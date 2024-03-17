@@ -1,14 +1,13 @@
-name: Compile latex and release pdf
-
-permissions:
-  pull-requests: write
-  contents: write
+name: Release pdf
 
 on:
-  pull_request:
+  push:
     branches: [ master ]
 
-jobs: 
+permissions:
+  contents: write
+
+jobs:
   release-pdf:
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +23,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ github.token }}
+          make_latest: true
           tag_name: ${{ steps.tag.outputs.release_tag }}
           target_commitish: ${{ github.sha }}
           files: |
