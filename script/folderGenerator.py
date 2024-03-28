@@ -18,4 +18,5 @@ for folder in args.folder:
     os.mkdir("./%s/data/secret"%(folder))
     os.mkdir("./%s/submissions"%(folder))
     os.mkdir("./%s/submissions/accepted"%(folder))
+    os.rename("./%s/tex"%(folder), "./tex/%s"%(folder))
     print("%s has generated"%(folder))

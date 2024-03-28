@@ -1,2 +1,2 @@
-docker-compose exec -T pdfMaker bash -c "texliveonfly problem.tex --compiler=xelatex ; latexmk -pdfxe problem.tex"
-rm -f problem.[^tp]* missfont.log
+docker-compose exec -T pdfMaker bash -c "cd tex && texliveonfly main.tex --compiler=xelatex ; latexmk -pdfxe main.tex"
+rm -f tex/main.[^tp]* missfont.log

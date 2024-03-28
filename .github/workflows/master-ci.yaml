@@ -29,5 +29,5 @@ jobs:
           tag_name: ${{ steps.tag.outputs.release_tag }}
           target_commitish: ${{ github.sha }}
           files: |
-            problem.pdf
+            tex/main.pdf
             *.zip

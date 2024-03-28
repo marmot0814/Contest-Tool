@@ -1,7 +1,7 @@
 all: build
 
 build:
-	docker-compose build --no-cache
+	docker-compose build
 	docker-compose up -d
 
 pdf:
@@ -11,4 +11,7 @@ compress:
 	bash script/folderCompressor.sh
 
 clean:
-	rm -rf problem.pdf *.zip
+	rm -rf tex/main.pdf *.zip
+
+remove:
+	docker-compose down
