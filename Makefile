@@ -5,13 +5,16 @@ build:
 	docker-compose up -d
 
 pdf:
-	bash script/makePdf.sh
+	bash scripts/makePdf.sh
 
 compress:
-	bash script/folderCompressor.sh
+	bash scripts/folderCompressor.sh
+
+release: pdf compress
+	bash scripts/release.sh
 
 clean:
-	rm -rf tex/main.pdf *.zip
+	rm -rf release/ */tex/*.pdf */*.zip
 
 remove:
 	docker-compose down

@@ -6,8 +6,9 @@ import subprocess
 from requests.auth import HTTPBasicAuth
 
 # parameter
-server = ""
-adminPassword = ""
+server = "cp1-2024.konchin.com"
+adminName = "admin"
+adminPassword = "cp12024admin8787"
 
 def getSpecificResultSubmission(cid, submission, result):
     judgements = json.loads(requests.get("http://%s/api/v4/contests/%d/judgements"%(server,cid), auth=HTTPBasicAuth(adminName, adminPassword), headers={'User-Agent': 'Mozilla'}).text)
@@ -58,12 +59,11 @@ def getTeamInfo(L,R):
     for cid in range(L,R):
         teams = json.loads(requests.get("http://%s/api/v4/contests/%d/teams"%(server,cid), auth=HTTPBasicAuth(adminName, adminPassword), headers={'User-Agent': 'Mozilla'}).text)
         for t in teams:
-            teamId.add(f'{t["id"]}_{t["name"]}')
+            teamId.add(f'{t["id"]}_{t["display_name"]}')
 
     teamId = sorted(teamId)
     for item in teamId:
         print(item)
-    
 
 if __name__ == '__main__':
     try:
@@ -71,3 +71,5 @@ if __name__ == '__main__':
     except:
         pass
     os.chdir("out/submits")
+    getTeamInfo(4,5)
+#    downloadCode(4)

@@ -17,10 +17,12 @@ jobs:
         run: make build
       - name: Generate pdf
         run: make pdf
+      - name: Generate release
+        run: bash scripts/release.sh
       - name: Upload Artifact
         id: upload
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: main.pdf
-          path: tex/main.pdf
+          name: problem
+          path: release/*.pdf
           if-no-files-found: error

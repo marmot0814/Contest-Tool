@@ -14,20 +14,16 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build the stack
         run: make build
-      - name: Generate pdf
-        run: make pdf
+      - name: Generate release
+        run: make release
       - name: Generate release tag
         id: tag
         run: echo "release_tag=$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
-      - name: Compress domjudge format zip file
-        run: make compress
-      - name: Release contest data
+      - name: Release data
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ github.token }}
           make_latest: true
           tag_name: ${{ steps.tag.outputs.release_tag }}
           target_commitish: ${{ github.sha }}
-          files: |
-            tex/main.pdf
-            *.zip
+          files: release/*
